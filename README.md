@@ -18,3 +18,7 @@ export default {
     ...
 }
 ```
+
+## License
+
+[MIT](https://github.com/lossendae/vue-table/blob/master/LICENSE)

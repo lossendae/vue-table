@@ -1,10 +1,10 @@
 <template>
-    <table class="vue-table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th v-for="(column, index) in fields" :key="`${column}_${index}`">
                     <slot :name="`header__${column.name}`" :column="column">
-                        <a href=""
+                        <a href="" class="d-flex align-items-center sortable-link"
                            @click.prevent="sort(column)"
                            v-if="(column.sortable || false) && rows.length > 0">
                             {{ column.title || column.name }}
@@ -30,7 +30,7 @@
             </tr>
             <tr v-if="rows.length === 0">
                 <slot name="no_result" :fields="fields">
-                    <td :colspan="fields.length">
+                    <td class="text-center pt-4 p-3" :colspan="fields.length">
                         No results found
                     </td>
                 </slot>

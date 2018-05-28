@@ -81,6 +81,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
+/***/ "+rLv":
+/***/ (function(module, exports, __webpack_require__) {
+
+var document = __webpack_require__("dyZX").document;
+module.exports = document && document.documentElement;
+
+
+/***/ }),
+
 /***/ "+xUi":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -90,12 +99,12 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("HrLf");
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/VueTable.vue?vue&type=template&id=042468b9
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"vue-table"},[_c('thead',[_c('tr',_vm._l((_vm.fields),function(column,index){return _c('th',{key:(column + "_" + index)},[_vm._t(("header__" + (column.name)),[((column.sortable || false) && _vm.rows.length > 0)?_c('a',{attrs:{"href":""},on:{"click":function($event){$event.preventDefault();_vm.sort(column)}}},[_vm._v("\n                        "+_vm._s(column.title || column.name)+"\n                        "),(_vm.isSorted(column))?_c('i',{staticClass:"fa ml-2",class:{'fa-caret-up': _vm.sortDirection === 'asc', 'fa-caret-down': _vm.sortDirection === 'desc'}}):_vm._e()]):[_vm._v(_vm._s(column.title || column.name))]],{column:column})],2)}))]),_c('tbody',[_vm._l((_vm.rows),function(row){return _c('tr',_vm._l((_vm.field_names),function(name,index){return _c('td',{key:((row[name]) + "_" + index)},[(_vm.fieldExistsInRow(row, name))?[_vm._t(name,[_vm._v(_vm._s(row[name]))],{row:row})]:[_vm._t(name,[_vm._v("[slot: "+_vm._s(name)+"]")],{row:row})]],2)}))}),(_vm.rows.length === 0)?_c('tr',[_vm._t("no_result",[_c('td',{attrs:{"colspan":_vm.fields.length}},[_vm._v("\n                    No results found\n                ")])],{fields:_vm.fields})],2):_vm._e()],2)])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/VueTable.vue?vue&type=template&id=7fd252e0
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"table table-hover"},[_c('thead',[_c('tr',_vm._l((_vm.fields),function(column,index){return _c('th',{key:(column + "_" + index)},[_vm._t(("header__" + (column.name)),[((column.sortable || false) && _vm.rows.length > 0)?_c('a',{staticClass:"d-flex align-items-center sortable-link",attrs:{"href":""},on:{"click":function($event){$event.preventDefault();_vm.sort(column)}}},[_vm._v("\n                        "+_vm._s(column.title || column.name)+"\n                        "),(_vm.isSorted(column))?_c('i',{staticClass:"fa ml-2",class:{'fa-caret-up': _vm.sortDirection === 'asc', 'fa-caret-down': _vm.sortDirection === 'desc'}}):_vm._e()]):[_vm._v(_vm._s(column.title || column.name))]],{column:column})],2)}))]),_c('tbody',[_vm._l((_vm.rows),function(row){return _c('tr',_vm._l((_vm.field_names),function(name,index){return _c('td',{key:((row[name]) + "_" + index)},[(_vm.fieldExistsInRow(row, name))?[_vm._t(name,[_vm._v(_vm._s(row[name]))],{row:row})]:[_vm._t(name,[_vm._v("[slot: "+_vm._s(name)+"]")],{row:row})]],2)}))}),(_vm.rows.length === 0)?_c('tr',[_vm._t("no_result",[_c('td',{staticClass:"text-center pt-4 p-3",attrs:{"colspan":_vm.fields.length}},[_vm._v("\n                    No results found\n                ")])],{fields:_vm.fields})],2):_vm._e()],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/VueTable.vue?vue&type=template&id=042468b9
+// CONCATENATED MODULE: ./src/VueTable.vue?vue&type=template&id=7fd252e0
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("f3/d");
@@ -334,18 +343,292 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var VueTable = (component.exports);
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/VueTablePagination.vue?vue&type=template&id=5e2fc8e9
+var VueTablePaginationvue_type_template_id_5e2fc8e9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"d-flex bg-light p-2 align-items-center"},[_c('div',{},[(_vm.total_pages > 1)?[_vm._v("\n            From "+_vm._s(_vm.from)+" to "+_vm._s(_vm.to)+" on "+_vm._s(_vm.totalItems)+" result(s)\n        ")]:[_vm._v("\n            No results\n        ")]],2),_c('div',{staticClass:"ml-auto d-flex"},[(_vm.showRefreshButton)?[_c('button',{staticClass:"btn btn-sm btn-outline-secondary mr-2",on:{"click":function($event){$event.preventDefault();_vm.selectPage(_vm.currentPage)}}},[_c('i',{staticClass:"fa fa-refresh pl-1 pr-1"})])]:_vm._e(),(_vm.total_pages > 1)?_c('ul',{staticClass:"pagination"},[(_vm.useFirstLastLinks)?_c('li',{staticClass:"page-item",class:{ disabled: _vm.is_first_page }},[_c('a',{staticClass:"page-link",attrs:{"href":""},domProps:{"innerHTML":_vm._s(_vm.firstText)},on:{"click":function($event){$event.preventDefault();_vm.selectPage(1)}}})]):_vm._e(),(_vm.useNextPrevLinks)?_c('li',{staticClass:"page-item",class:{ disabled: _vm.is_first_page }},[_c('a',{staticClass:"page-link",attrs:{"href":""},domProps:{"innerHTML":_vm._s(_vm.previousText)},on:{"click":function($event){$event.preventDefault();_vm.selectPage(_vm.currentPage - 1)}}})]):_vm._e(),_vm._l((_vm.pages),function(page,index){return _c('li',{key:index,staticClass:"page-item",class:{ active: page.active }},[_c('a',{staticClass:"page-link",attrs:{"disabled":!page.active,"href":""},on:{"click":function($event){$event.preventDefault();_vm.selectPage(page.number)}}},[_vm._v(_vm._s(page.label))])])}),(_vm.useNextPrevLinks)?_c('li',{staticClass:"page-item",class:{ disabled: _vm.is_last_page }},[_c('a',{staticClass:"page-link",attrs:{"href":""},domProps:{"innerHTML":_vm._s(_vm.nextText)},on:{"click":function($event){$event.preventDefault();_vm.selectPage(_vm.currentPage + 1)}}})]):_vm._e(),(_vm.useFirstLastLinks)?_c('li',{staticClass:"page-item",class:{ disabled: _vm.is_last_page }},[_c('a',{staticClass:"page-link",attrs:{"href":""},domProps:{"innerHTML":_vm._s(_vm.lastText )},on:{"click":function($event){$event.preventDefault();_vm.selectPage(_vm.total_pages)}}})]):_vm._e()],2):_vm._e()],2)])}
+var VueTablePaginationvue_type_template_id_5e2fc8e9_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/VueTablePagination.vue?vue&type=template&id=5e2fc8e9
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
+var es6_number_constructor = __webpack_require__("xfY5");
+
+// CONCATENATED MODULE: ./src/mixins/VueTablePaginationMixin.js
+
+/* harmony default export */ var VueTablePaginationMixin = ({
+  props: {
+    showRefreshButton: {
+      type: Boolean,
+      default: true
+    },
+    useFirstLastLinks: {
+      type: Boolean,
+      default: true
+    },
+    useBoundariesNumbersLinks: {
+      type: Boolean,
+      default: false
+    },
+    useNextPrevLinks: {
+      type: Boolean,
+      default: false
+    },
+    firstText: {
+      type: String,
+      default: "«"
+    },
+    lastText: {
+      type: String,
+      default: "»"
+    },
+    nextText: {
+      type: String,
+      default: "<"
+    },
+    previousText: {
+      type: String,
+      default: ">"
+    },
+    useEllipses: {
+      type: Boolean,
+      default: true
+    },
+    changeOnClick: {
+      type: Boolean,
+      default: false
+    },
+    rotate: {
+      type: Boolean,
+      default: true
+    },
+    maxPageItems: {
+      type: Number,
+      default: 5
+    },
+    itemsPerPage: {
+      type: Number,
+      default: 15
+    },
+    totalItems: {
+      type: Number,
+      required: true
+    },
+    currentPage: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    is_last_page: function is_last_page() {
+      return this.currentPage === this.total_pages;
+    },
+    is_first_page: function is_first_page() {
+      return this.currentPage === 1;
+    },
+    total_pages: function total_pages() {
+      var total_pages = this.itemsPerPage < 1 ? 1 : Math.ceil(this.totalItems / this.itemsPerPage);
+      return Math.max(total_pages || 0, 1);
+    },
+    from: function from() {
+      return this.is_first_page ? 1 : this.itemsPerPage * (this.currentPage - 1) + 1;
+    },
+    to: function to() {
+      return this.is_last_page ? this.totalItems : this.itemsPerPage * this.currentPage;
+    },
+    pages: function pages() {
+      var pages = [];
+
+      if (this.currentPage <= 0 || this.currentPage > this.total_pages) {
+        return pages;
+      } // Default page limits
+
+
+      var start_page = 1;
+      var end_page = this.total_pages;
+      var limit_page_items = this.isDefined(this.maxPageItems) && this.maxPageItems < this.total_pages; // recompute if maxPageItems
+
+      if (limit_page_items) {
+        if (this.rotate) {
+          // Current page is displayed in the middle of the visible ones
+          start_page = Math.max(this.currentPage - Math.floor(this.maxPageItems / 2), 1);
+          end_page = start_page + this.maxPageItems - 1; // Adjust if limit is exceeded
+
+          if (end_page > this.total_pages) {
+            end_page = this.total_pages;
+            start_page = end_page - this.maxPageItems + 1;
+          }
+        } else {
+          // Visible pages are paginated with maxPageItems
+          start_page = (Math.ceil(this.currentPage / this.maxPageItems) - 1) * this.maxPageItems + 1; // Adjust last page if limit is exceeded
+
+          end_page = Math.min(start_page + this.maxPageItems - 1, this.total_pages);
+        }
+      } // Add page number links
+
+
+      for (var number = start_page; number <= end_page; number++) {
+        var page = this.makePage(number, number, number === this.currentPage);
+        pages.push(page);
+      } // Add links to move between page sets
+
+
+      if (limit_page_items && this.maxPageItems > 0 && (!this.rotate || this.useEllipses || this.useBoundariesNumbersLinks)) {
+        if (start_page > 1) {
+          if (!this.useBoundariesNumbersLinks || start_page > 3) {
+            //need ellipsis for all options unless range is too close to beginning
+            var previous_ellipsis_page_item = this.makePage(start_page - 1, '...', false);
+            pages.unshift(previous_ellipsis_page_item);
+          }
+
+          if (this.useBoundariesNumbersLinks) {
+            if (start_page === 3) {
+              //need to replace ellipsis when the buttons would be sequential
+              var second_page_item = this.makePage(2, '2', false);
+              pages.unshift(second_page_item);
+            } //add the first page
+
+
+            var first_page_item = this.makePage(1, '1', false);
+            pages.unshift(first_page_item);
+          }
+        }
+
+        if (end_page < this.total_pages) {
+          if (!this.useBoundariesNumbersLinks || end_page < this.total_pages - 2) {
+            //need ellipsis for all options unless range is too close to end
+            var next_ellipsis_page_item = this.makePage(end_page + 1, '...', false);
+            pages.push(next_ellipsis_page_item);
+          }
+
+          if (this.useBoundariesNumbersLinks) {
+            if (end_page === this.total_pages - 2) {
+              //need to replace ellipsis when the buttons would be sequential
+              var second_to_last_page_item = this.makePage(this.total_pages - 1, this.total_pages - 1, false);
+              pages.push(second_to_last_page_item);
+            } //add the last page
+
+
+            var last_page_item = this.makePage(this.total_pages, this.total_pages, false);
+            pages.push(last_page_item);
+          }
+        }
+      }
+
+      return pages;
+    }
+  },
+  methods: {
+    selectPage: function selectPage(page) {
+      this.$emit('pagination:change', page);
+    },
+    isDefined: function isDefined(value) {
+      return typeof value !== "undefined";
+    },
+    makePage: function makePage(number, label, active) {
+      return {
+        number: number,
+        label: label,
+        active: active
+      };
+    }
+  }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/VueTablePagination.vue?vue&type=script&lang=js
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var VueTablePaginationvue_type_script_lang_js = ({
+  mixins: [VueTablePaginationMixin]
+});
+// CONCATENATED MODULE: ./src/VueTablePagination.vue?vue&type=script&lang=js
+ /* harmony default export */ var src_VueTablePaginationvue_type_script_lang_js = (VueTablePaginationvue_type_script_lang_js); 
+// CONCATENATED MODULE: ./src/VueTablePagination.vue
+
+
+
+
+
+/* normalize component */
+
+var VueTablePagination_component = normalizeComponent(
+  src_VueTablePaginationvue_type_script_lang_js,
+  VueTablePaginationvue_type_template_id_5e2fc8e9_render,
+  VueTablePaginationvue_type_template_id_5e2fc8e9_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var VueTablePagination = (VueTablePagination_component.exports);
 // CONCATENATED MODULE: ./src/main.js
 
 
-/* harmony default export */ var main = (VueTable);
+
+
+/* harmony default export */ var main = ({
+  install: function install(Vue) {
+    Vue.component('vue-table', VueTable);
+    Vue.component('vue-table-pagination', VueTablePagination);
+  }
+});
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VueTable", function() { return VueTable; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VueTableMixin", function() { return VueTableMixin; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VueTablePagination", function() { return VueTablePagination; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VueTablePaginationMixin", function() { return VueTablePaginationMixin; });
 
 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (main);
 
+
+
+/***/ }),
+
+/***/ "/e88":
+/***/ (function(module, exports) {
+
+module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -381,6 +664,74 @@ module.exports = function (that, searchString, NAME) {
 module.exports = function (it) {
   if (typeof it != 'function') throw TypeError(it + ' is not a function!');
   return it;
+};
+
+
+/***/ }),
+
+/***/ "4R4u":
+/***/ (function(module, exports) {
+
+// IE 8- don't enum bug keys
+module.exports = (
+  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+).split(',');
+
+
+/***/ }),
+
+/***/ "DVgA":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys = __webpack_require__("zhAb");
+var enumBugKeys = __webpack_require__("4R4u");
+
+module.exports = Object.keys || function keys(O) {
+  return $keys(O, enumBugKeys);
+};
+
+
+/***/ }),
+
+/***/ "EemH":
+/***/ (function(module, exports, __webpack_require__) {
+
+var pIE = __webpack_require__("UqcF");
+var createDesc = __webpack_require__("RjD/");
+var toIObject = __webpack_require__("aCFj");
+var toPrimitive = __webpack_require__("apmT");
+var has = __webpack_require__("aagx");
+var IE8_DOM_DEFINE = __webpack_require__("xpql");
+var gOPD = Object.getOwnPropertyDescriptor;
+
+exports.f = __webpack_require__("nh4g") ? gOPD : function getOwnPropertyDescriptor(O, P) {
+  O = toIObject(O);
+  P = toPrimitive(P, true);
+  if (IE8_DOM_DEFINE) try {
+    return gOPD(O, P);
+  } catch (e) { /* empty */ }
+  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
+};
+
+
+/***/ }),
+
+/***/ "FJW5":
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__("hswa");
+var anObject = __webpack_require__("y3w9");
+var getKeys = __webpack_require__("DVgA");
+
+module.exports = __webpack_require__("nh4g") ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
+  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
+  return O;
 };
 
 
@@ -467,6 +818,54 @@ __webpack_require__("g3g5").inspectSource = function (it) {
 })(Function.prototype, TO_STRING, function toString() {
   return typeof this == 'function' && this[SRC] || $toString.call(this);
 });
+
+
+/***/ }),
+
+/***/ "Kuth":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+var anObject = __webpack_require__("y3w9");
+var dPs = __webpack_require__("FJW5");
+var enumBugKeys = __webpack_require__("4R4u");
+var IE_PROTO = __webpack_require__("YTvA")('IE_PROTO');
+var Empty = function () { /* empty */ };
+var PROTOTYPE = 'prototype';
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var createDict = function () {
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = __webpack_require__("Iw71")('iframe');
+  var i = enumBugKeys.length;
+  var lt = '<';
+  var gt = '>';
+  var iframeDocument;
+  iframe.style.display = 'none';
+  __webpack_require__("+rLv").appendChild(iframe);
+  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+  // createDict = iframe.contentWindow.Object;
+  // html.removeChild(iframe);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
+  iframeDocument.close();
+  createDict = iframeDocument.F;
+  while (i--) delete createDict[PROTOTYPE][enumBugKeys[i]];
+  return createDict();
+};
+
+module.exports = Object.create || function create(O, Properties) {
+  var result;
+  if (O !== null) {
+    Empty[PROTOTYPE] = anObject(O);
+    result = new Empty();
+    Empty[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = createDict();
+  return Properties === undefined ? result : dPs(result, Properties);
+};
 
 
 /***/ }),
@@ -573,6 +972,14 @@ module.exports = function (KEY) {
 
 /***/ }),
 
+/***/ "UqcF":
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+
 /***/ "VTer":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -638,6 +1045,34 @@ $export.W = 32;  // wrap
 $export.U = 64;  // safe
 $export.R = 128; // real proto method for `library`
 module.exports = $export;
+
+
+/***/ }),
+
+/***/ "Xbzi":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("0/R4");
+var setPrototypeOf = __webpack_require__("i5dc").set;
+module.exports = function (that, target, C) {
+  var S = target.constructor;
+  var P;
+  if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf) {
+    setPrototypeOf(that, P);
+  } return that;
+};
+
+
+/***/ }),
+
+/***/ "YTvA":
+/***/ (function(module, exports, __webpack_require__) {
+
+var shared = __webpack_require__("VTer")('keys');
+var uid = __webpack_require__("ylqs");
+module.exports = function (key) {
+  return shared[key] || (shared[key] = uid(key));
+};
 
 
 /***/ }),
@@ -814,6 +1249,52 @@ exports.f = __webpack_require__("nh4g") ? Object.defineProperty : function defin
 
 /***/ }),
 
+/***/ "i5dc":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Works with __proto__ only. Old v8 can't work with null proto objects.
+/* eslint-disable no-proto */
+var isObject = __webpack_require__("0/R4");
+var anObject = __webpack_require__("y3w9");
+var check = function (O, proto) {
+  anObject(O);
+  if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
+};
+module.exports = {
+  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
+    function (test, buggy, set) {
+      try {
+        set = __webpack_require__("m0Pp")(Function.call, __webpack_require__("EemH").f(Object.prototype, '__proto__').set, 2);
+        set(test, []);
+        buggy = !(test instanceof Array);
+      } catch (e) { buggy = true; }
+      return function setPrototypeOf(O, proto) {
+        check(O, proto);
+        if (buggy) O.__proto__ = proto;
+        else set(O, proto);
+        return O;
+      };
+    }({}, false) : undefined),
+  check: check
+};
+
+
+/***/ }),
+
+/***/ "kJMx":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+var $keys = __webpack_require__("zhAb");
+var hiddenKeys = __webpack_require__("4R4u").concat('length', 'prototype');
+
+exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
+  return $keys(O, hiddenKeys);
+};
+
+
+/***/ }),
+
 /***/ "m0Pp":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -879,6 +1360,43 @@ module.exports = !__webpack_require__("eeVq")(function () {
 
 /***/ }),
 
+/***/ "qncB":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__("XKFU");
+var defined = __webpack_require__("vhPU");
+var fails = __webpack_require__("eeVq");
+var spaces = __webpack_require__("/e88");
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+
 /***/ "quPj":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -936,6 +1454,83 @@ module.exports = function (IS_INCLUDES) {
 
 /***/ }),
 
+/***/ "xfY5":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var global = __webpack_require__("dyZX");
+var has = __webpack_require__("aagx");
+var cof = __webpack_require__("LZWt");
+var inheritIfRequired = __webpack_require__("Xbzi");
+var toPrimitive = __webpack_require__("apmT");
+var fails = __webpack_require__("eeVq");
+var gOPN = __webpack_require__("kJMx").f;
+var gOPD = __webpack_require__("EemH").f;
+var dP = __webpack_require__("hswa").f;
+var $trim = __webpack_require__("qncB").trim;
+var NUMBER = 'Number';
+var $Number = global[NUMBER];
+var Base = $Number;
+var proto = $Number.prototype;
+// Opera ~12 has broken Object#toString
+var BROKEN_COF = cof(__webpack_require__("Kuth")(proto)) == NUMBER;
+var TRIM = 'trim' in String.prototype;
+
+// 7.1.3 ToNumber(argument)
+var toNumber = function (argument) {
+  var it = toPrimitive(argument, false);
+  if (typeof it == 'string' && it.length > 2) {
+    it = TRIM ? it.trim() : $trim(it, 3);
+    var first = it.charCodeAt(0);
+    var third, radix, maxCode;
+    if (first === 43 || first === 45) {
+      third = it.charCodeAt(2);
+      if (third === 88 || third === 120) return NaN; // Number('+0x1') should be NaN, old V8 fix
+    } else if (first === 48) {
+      switch (it.charCodeAt(1)) {
+        case 66: case 98: radix = 2; maxCode = 49; break; // fast equal /^0b[01]+$/i
+        case 79: case 111: radix = 8; maxCode = 55; break; // fast equal /^0o[0-7]+$/i
+        default: return +it;
+      }
+      for (var digits = it.slice(2), i = 0, l = digits.length, code; i < l; i++) {
+        code = digits.charCodeAt(i);
+        // parseInt parses a string to a first unavailable symbol
+        // but ToNumber should return NaN if a string contains unavailable symbols
+        if (code < 48 || code > maxCode) return NaN;
+      } return parseInt(digits, radix);
+    }
+  } return +it;
+};
+
+if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
+  $Number = function Number(value) {
+    var it = arguments.length < 1 ? 0 : value;
+    var that = this;
+    return that instanceof $Number
+      // check on 1..constructor(foo) case
+      && (BROKEN_COF ? fails(function () { proto.valueOf.call(that); }) : cof(that) != NUMBER)
+        ? inheritIfRequired(new Base(toNumber(it)), that, $Number) : toNumber(it);
+  };
+  for (var keys = __webpack_require__("nh4g") ? gOPN(Base) : (
+    // ES3:
+    'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
+    // ES6 (in case, if modules with ES6 Number statics required before):
+    'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
+    'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
+  ).split(','), j = 0, key; keys.length > j; j++) {
+    if (has(Base, key = keys[j]) && !has($Number, key)) {
+      dP($Number, key, gOPD(Base, key));
+    }
+  }
+  $Number.prototype = proto;
+  proto.constructor = $Number;
+  __webpack_require__("KroJ")(global, NUMBER, $Number);
+}
+
+
+/***/ }),
+
 /***/ "xpql":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -965,6 +1560,30 @@ var id = 0;
 var px = Math.random();
 module.exports = function (key) {
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
+
+
+/***/ }),
+
+/***/ "zhAb":
+/***/ (function(module, exports, __webpack_require__) {
+
+var has = __webpack_require__("aagx");
+var toIObject = __webpack_require__("aCFj");
+var arrayIndexOf = __webpack_require__("w2a5")(false);
+var IE_PROTO = __webpack_require__("YTvA")('IE_PROTO');
+
+module.exports = function (object, names) {
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
+  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while (names.length > i) if (has(O, key = names[i++])) {
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
 };
 
 

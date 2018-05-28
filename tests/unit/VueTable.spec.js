@@ -3,7 +3,7 @@ import './utils/console/'
 import VueTable from '@/VueTable.vue'
 
 describe('VueTable.vue', () => {
-    describe('initalize', () => {
+    describe('initialize', () => {
         it('should work with no columns and no rows', () => {
             const props = {
                 fields: [],
