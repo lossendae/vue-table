@@ -1,7 +1,7 @@
 {
   "name": "@lossendae/vue-table",
   "description": "Simple table component for Vue.js 2.x with pagination and sortable columns",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "license": "MIT",
   "author": "Stéphane Boulard <lossendae@gmail.com>",
