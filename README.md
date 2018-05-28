@@ -11,12 +11,10 @@ npm install --save @lossendae/vue-table
 Then in your component
 
 ```js 
+import Vue from 'vue'
 import VueTable from '@lossendae/vue-table'
 
-export default {
-    components: { VueTable }
-    ...
-}
+Vue.use(VueTable)
 ```
 
 ## License
