@@ -90,12 +90,12 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("HrLf");
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/VueTable.vue?vue&type=template&id=7fd252e0
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"table table-hover"},[_c('thead',[_c('tr',_vm._l((_vm.fields),function(column,index){return _c('th',{key:(column + "_" + index)},[_vm._t(("header__" + (column.name)),[((column.sortable || false) && _vm.rows.length > 0)?_c('a',{staticClass:"d-flex align-items-center sortable-link",attrs:{"href":""},on:{"click":function($event){$event.preventDefault();_vm.sort(column)}}},[_vm._v("\n                        "+_vm._s(column.title || column.name)+"\n                        "),(_vm.isSorted(column))?_c('i',{staticClass:"fa ml-2",class:{'fa-caret-up': _vm.sortDirection === 'asc', 'fa-caret-down': _vm.sortDirection === 'desc'}}):_vm._e()]):[_vm._v(_vm._s(column.title || column.name))]],{column:column})],2)}))]),_c('tbody',[_vm._l((_vm.rows),function(row){return _c('tr',_vm._l((_vm.field_names),function(name,index){return _c('td',{key:((row[name]) + "_" + index)},[(_vm.fieldExistsInRow(row, name))?[_vm._t(name,[_vm._v(_vm._s(row[name]))],{row:row})]:[_vm._t(name,[_vm._v("[slot: "+_vm._s(name)+"]")],{row:row})]],2)}))}),(_vm.rows.length === 0)?_c('tr',[_vm._t("no_result",[_c('td',{staticClass:"text-center pt-4 p-3",attrs:{"colspan":_vm.fields.length}},[_vm._v("\n                    No results found\n                ")])],{fields:_vm.fields})],2):_vm._e()],2)])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/VueTable.vue?vue&type=template&id=1134eb10
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"table table-hover"},[_c('thead',[_c('tr',_vm._l((_vm.columns),function(column,index){return _c('th',{key:(column + "_" + index)},[_vm._t(("header__" + (column.name)),[((column.sortable || false) && _vm.rows.length > 0)?_c('a',{staticClass:"d-flex align-items-center sortable-link",attrs:{"href":""},on:{"click":function($event){$event.preventDefault();_vm.sort(column)}}},[_vm._v("\n                        "+_vm._s(column.title || column.name)+"\n                        "),(_vm.isSorted(column))?_c('i',{staticClass:"fa ml-2",class:{'fa-caret-up': _vm.sortDirection === 'asc', 'fa-caret-down': _vm.sortDirection === 'desc'}}):_vm._e()]):[_vm._v(_vm._s(column.title || column.name))]],{column:column})],2)}))]),_c('tbody',[_vm._l((_vm.rows),function(row){return _c('tr',_vm._l((_vm.column_names),function(name,index){return _c('td',{key:((row[name]) + "_" + index)},[(_vm.fieldExistsInRow(row, name))?[_vm._t(name,[_vm._v(_vm._s(row[name]))],{row:row})]:[_vm._t(name,[_vm._v("[slot: "+_vm._s(name)+"]")],{row:row})]],2)}))}),(_vm.rows.length === 0)?_c('tr',[_vm._t("no_result",[_c('td',{staticClass:"text-center pt-4 p-3",attrs:{"colspan":_vm.columns.length}},[_vm._v("\n                    No results found\n                ")])],{columns:_vm.columns})],2):_vm._e()],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/VueTable.vue?vue&type=template&id=7fd252e0
+// CONCATENATED MODULE: ./src/VueTable.vue?vue&type=template&id=1134eb10
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("f3/d");
@@ -112,7 +112,7 @@ var es6_string_includes = __webpack_require__("L9s1");
 
 /* harmony default export */ var VueTableMixin = ({
   props: {
-    fields: {
+    columns: {
       type: Array,
       required: true
     },
@@ -136,7 +136,7 @@ var es6_string_includes = __webpack_require__("L9s1");
   },
   data: function data() {
     return {
-      field_names: []
+      column_names: []
     };
   },
   methods: {
@@ -165,7 +165,7 @@ var es6_string_includes = __webpack_require__("L9s1");
   },
   mounted: function mounted() {
     // map column names
-    this.field_names = this.fields.map(function (f) {
+    this.column_names = this.columns.map(function (f) {
       return f.name;
     });
   }
