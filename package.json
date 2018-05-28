@@ -17,7 +17,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueTable src/main.js",
-    "test": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "keywords": [
     "vue.js",
@@ -38,7 +40,8 @@
     "jest-mock-console": "^0.3.5",
     "lodash": "^4.17.10",
     "vue": "^2.5.16",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.13",
+    "vuepress": "^0.10.0"
   },
   "babel": {
     "presets": [

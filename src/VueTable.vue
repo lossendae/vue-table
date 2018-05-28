@@ -2,7 +2,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th v-for="(column, index) in fields" :key="`${column}_${index}`">
+                <th v-for="(column, index) in columns" :key="`${column}_${index}`">
                     <slot :name="`header__${column.name}`" :column="column">
                         <a href="" class="d-flex align-items-center sortable-link"
                            @click.prevent="sort(column)"
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <tr v-for="row in rows">
-                <td v-for="(name, index) in field_names" :key="`${row[name]}_${index}`">
+                <td v-for="(name, index) in column_names" :key="`${row[name]}_${index}`">
                     <template v-if="fieldExistsInRow(row, name)">
                         <slot :name="name" :row="row">{{ row[name] }}</slot>
                     </template>
@@ -29,8 +29,8 @@
                 </td>
             </tr>
             <tr v-if="rows.length === 0">
-                <slot name="no_result" :fields="fields">
-                    <td class="text-center pt-4 p-3" :colspan="fields.length">
+                <slot name="no_result" :columns="columns">
+                    <td class="text-center pt-4 p-3" :colspan="columns.length">
                         No results found
                     </td>
                 </slot>

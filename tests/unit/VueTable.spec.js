@@ -6,7 +6,7 @@ describe('VueTable.vue', () => {
     describe('initialize', () => {
         it('should work with no columns and no rows', () => {
             const props = {
-                fields: [],
+                columns: [],
                 rows: [],
             }
             const wrapper = shallowMount(VueTable, {
@@ -19,7 +19,7 @@ describe('VueTable.vue', () => {
     describe('column definition', () => {
         it('should map field names correctly', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                 }, {
                     name: 'column_2',
@@ -31,12 +31,12 @@ describe('VueTable.vue', () => {
                 propsData: props,
             })
 
-            expect(wrapper.vm.$data.field_names).toEqual(['column_1', 'column_2'])
+            expect(wrapper.vm.$data.column_names).toEqual(['column_1', 'column_2'])
         })
 
         it('should set the currently sorted column correctly', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                     sortable: true,
                 }, {
@@ -56,14 +56,14 @@ describe('VueTable.vue', () => {
                 propsData: props,
             })
 
-            expect(wrapper.vm.isSorted(props.fields[0])).toEqual(true)
-            expect(wrapper.vm.isSorted(props.fields[1])).toEqual(false)
-            expect(wrapper.vm.isSorted(props.fields[2])).toEqual(false)
+            expect(wrapper.vm.isSorted(props.columns[0])).toEqual(true)
+            expect(wrapper.vm.isSorted(props.columns[1])).toEqual(false)
+            expect(wrapper.vm.isSorted(props.columns[2])).toEqual(false)
         })
 
         it('should get column sort key correctly', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                     sortable: true,
                 }, {
@@ -80,13 +80,13 @@ describe('VueTable.vue', () => {
                 propsData: props,
             })
 
-            expect(wrapper.vm.getSortKey(props.fields[0])).toEqual('column_1')
-            expect(wrapper.vm.getSortKey(props.fields[1])).toEqual('with_another_key')
+            expect(wrapper.vm.getSortKey(props.columns[0])).toEqual('column_1')
+            expect(wrapper.vm.getSortKey(props.columns[1])).toEqual('with_another_key')
         })
 
         it('should warn when sortBy props is missing when at least one column is sortable', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                     sortable: true,
                 }],
@@ -107,7 +107,7 @@ describe('VueTable.vue', () => {
 
         it('should log an error when sortDirection props validator fails', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                     sortable: true,
                 }],
@@ -131,7 +131,7 @@ describe('VueTable.vue', () => {
     describe('an event', () => {
         it('should be emitted when a column is sorted', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                     sortable: true,
                 }, {
@@ -147,7 +147,7 @@ describe('VueTable.vue', () => {
             const wrapper = shallowMount(VueTable, {
                 propsData: props,
             })
-            wrapper.vm.sort(props.fields[0])
+            wrapper.vm.sort(props.columns[0])
             expect(wrapper.emitted()['column:sort']).toEqual([[{
                 sortBy: 'column_1',
                 sortDirection: 'desc',
@@ -156,7 +156,7 @@ describe('VueTable.vue', () => {
 
         it('should be emitted when a column is sorted with a custom sort key', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1',
                     sortable: true,
                 }, {
@@ -172,7 +172,7 @@ describe('VueTable.vue', () => {
             const wrapper = shallowMount(VueTable, {
                 propsData: props,
             })
-            wrapper.vm.sort(props.fields[1])
+            wrapper.vm.sort(props.columns[1])
             expect(wrapper.emitted()['column:sort']).toEqual([[{
                 sortBy: 'with_another_key',
                 sortDirection: 'desc',
@@ -183,7 +183,7 @@ describe('VueTable.vue', () => {
     describe('row slot', () => {
         it('should return true when the column name exists in the row', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1'
                 }, {
                     name: 'action',
@@ -200,7 +200,7 @@ describe('VueTable.vue', () => {
         })
         it('should return false when the column name does not exists in the row', () => {
             const props = {
-                fields: [{
+                columns: [{
                     name: 'column_1'
                 }, {
                     name: 'action',
@@ -212,6 +212,16 @@ describe('VueTable.vue', () => {
             const wrapper = shallowMount(VueTable, {
                 propsData: props,
             })
+
+            const response = {
+                data: {
+                    data: {
+                        companies: [],
+                        sites: [],
+                        job: [],
+                    }
+                }
+            }
 
             expect(wrapper.vm.fieldExistsInRow(props.rows[0], 'action')).toEqual(false)
         })

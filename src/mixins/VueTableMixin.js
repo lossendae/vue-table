@@ -1,6 +1,6 @@
 export default {
     props: {
-        fields: {
+        columns: {
             type: Array,
             required: true,
         },
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            field_names: [],
+            column_names: [],
         }
     },
     methods: {
@@ -53,6 +53,6 @@ export default {
     },
     mounted() {
         // map column names
-        this.field_names = this.fields.map(f => f.name)
+        this.column_names = this.columns.map(f => f.name)
     },
 }
