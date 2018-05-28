@@ -5,8 +5,8 @@
   "private": false,
   "license": "MIT",
   "author": "Stéphane Boulard <lossendae@gmail.com>",
-  "main": "dist/min.js",
-  "module": "src/main.js",
+  "main": "dist/VueTable.umd.min.js",
+  "module": "dist/VueTable.common.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lossendae/vue-table.git"
