@@ -36,10 +36,6 @@ export default {
             type: Boolean,
             default: true,
         },
-        changeOnClick: {
-            type: Boolean,
-            default: false,
-        },
         rotate: {
             type: Boolean,
             default: true,

@@ -393,10 +393,6 @@ var es6_number_constructor = __webpack_require__("xfY5");
       type: Boolean,
       default: true
     },
-    changeOnClick: {
-      type: Boolean,
-      default: false
-    },
     rotate: {
       type: Boolean,
       default: true
