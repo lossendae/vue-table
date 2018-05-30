@@ -5,11 +5,11 @@ pageClass: content-960
 # Case study
 
 ::: tip
-For the following walkthrough, I'm using a data provider component to simulate call to the server.
+In the the following example, I'm using a data provider component to simulate call to the server.
 This is inspired by the excellent [VueJS course](https://adamwathan.me/advanced-vue-component-design/) made by Adam Wathan
 :::
 
-In this tutorial we'll review a few of the options available in order to build a dynamic table from a user list.
+In this tutorial we'll review a few of the options available in order to build a dynamic table.
 
 Let's say that we have a user list fetched from a server side script and we build a UI for it.
 
@@ -33,15 +33,15 @@ The json structure is fairly simple :
 
 For now we'll not add sortable columns nor pagination.
 
-Here is the resulting table :
+See below in the sandbox the rendered table :
 
 <iframe src="https://codesandbox.io/embed/5zp1o44qox" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 As you can see there are quite a lot of fields and data are shown raw without formatting.
 
-VueTable allows you to use slots to customise your table data using VueJS scoped slots. 
+VueTable uses slots to customise your table data with VueJS scoped slots. 
 
-If we want to group the fields `{ firsname, lastname, username }` in one column, all you have to do is change the column declaration to :
+If we want to format the fields `{ firsname, lastname, username }` in one column, change the column declaration to the name of the desired scope slot :
 
 ```js
 [
@@ -66,7 +66,7 @@ If we want to group the fields `{ firsname, lastname, username }` in one column,
       ]
 ```
 
-and then use the name `identity` in your template 
+and then use the name (here `identity`) in your template 
 
 ```html
 <vue-table class="table-bordered"
@@ -84,12 +84,12 @@ and then use the name `identity` in your template
 </vue-table>
 ```
 
-Each column name provided in column definition can be overridden in the parent component with a slot. 
-It means that `{ email, phone, birth_date, gender, revenue }` and any other columns can be use a a scope slot for custom formatting.
+Each column names provided in column definition can be overridden in the parent component with a slot. 
+It means that `{ email, phone, birth_date, gender, revenue }` and any other columns can be used as a scope slot for custom formatting.
 
 If we add an additional column `action` to the column, it will be available as a slot too.
 
-The following sandbox use scoped slots, pagination and custom filters to show how the table can more dynamic :
+The following sandbox example combines scoped slots, pagination, custom components and custom filters to show how the table can be more dynamic :
 
 <iframe src="https://codesandbox.io/embed/pk4nvqr0kq" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 

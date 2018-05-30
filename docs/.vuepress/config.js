@@ -1,6 +1,7 @@
 module.exports = {
     title: 'VueTable',
     description: 'Simple table component for Vue.js 2.x with pagination and sortable columns',
+    base: '/vue-table/',
     head: [
         ['link', { rel: 'icon', href: `/logo.png` }],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
