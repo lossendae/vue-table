@@ -2,6 +2,8 @@
 
 Simple table component for Vue.js 2.x with pagination and sortable columns
 
+Documentation is available here: https://lossendae.github.io
+
 ## Installation
 
 ```
