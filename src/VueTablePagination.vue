@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex bg-light p-2 align-items-center">
         <div class="">
-            <template v-if="total_pages > 1">
+            <template v-if="totalItems > 1">
                 From {{ from }} to {{ to }} on {{ totalItems }} result(s)
             </template>
             <template v-else>
