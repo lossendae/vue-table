@@ -31,7 +31,7 @@
             <tr v-if="rows.length === 0">
                 <slot name="no_result" :columns="columns">
                     <td class="text-center pt-4 p-3" :colspan="columns.length">
-                        No results found
+                        <slot name="empty">No results found</slot>
                     </td>
                 </slot>
             </tr>
@@ -40,10 +40,10 @@
 </template>
 
 <script>
-    import VueTableMixin from './mixins/VueTableMixin'
+    import vueTableMixin from './mixins/vueTableMixin'
 
     export default {
         name: 'vue-table',
-        mixins: [VueTableMixin],
+        mixins: [vueTableMixin],
     }
 </script>

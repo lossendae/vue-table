@@ -1,7 +1,8 @@
 *.log
 .temp
+.idea
+.circleci
 TODOs.md
-test
+tests
 docs
-yarn.lock
 yarn.lock

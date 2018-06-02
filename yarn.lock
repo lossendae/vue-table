@@ -624,13 +624,6 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
-"@babel/runtime@^7.0.0-beta.44":
-  version "7.0.0-beta.49"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.49.tgz#03b3bf07eb982072c8e851dd2ddd5110282e61bf"
-  dependencies:
-    core-js "^2.5.6"
-    regenerator-runtime "^0.11.1"
-
 "@babel/template@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.47.tgz#0473970a7c0bee7a1a18c1ca999d3ba5e5bad83d"
@@ -698,7 +691,7 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
 
-"@vue/babel-preset-app@3.0.0-beta.11", "@vue/babel-preset-app@^3.0.0-beta.11":
+"@vue/babel-preset-app@3.0.0-beta.11":
   version "3.0.0-beta.11"
   resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-3.0.0-beta.11.tgz#c8b889aa73464050f9cd3f9dc621951d85c24508"
   dependencies:
@@ -711,59 +704,78 @@
     babel-plugin-dynamic-import-node "^1.2.0"
     babel-plugin-transform-vue-jsx "^4.0.1"
 
-"@vue/cli-overlay@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-3.0.0-beta.11.tgz#56d88c471594d231712f813d9684918adea47222"
+"@vue/babel-preset-app@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-3.0.0-beta.15.tgz#8ea954f7ca3d10d1986ed767d9682cc8b5ffea4e"
+  dependencies:
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.47"
+    "@babel/plugin-transform-runtime" "7.0.0-beta.47"
+    "@babel/preset-env" "7.0.0-beta.47"
+    "@babel/preset-stage-2" "7.0.0-beta.47"
+    "@babel/runtime" "7.0.0-beta.47"
+    babel-helper-vue-jsx-merge-props "^2.0.3"
+    babel-plugin-dynamic-import-node "^1.2.0"
+    babel-plugin-transform-vue-jsx "^4.0.1"
 
-"@vue/cli-plugin-babel@^3.0.0-beta.10":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-3.0.0-beta.11.tgz#5918217ae336c89cd229e6c34faaebabd65aaa61"
+"@vue/cli-overlay@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-3.0.0-beta.15.tgz#e4b477bcbeaede138ce191e27d2222fac09078ed"
+
+"@vue/cli-plugin-babel@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-3.0.0-beta.15.tgz#95becf4a1b4ff6e1f1ac865bcf6e354d0f48924e"
   dependencies:
     "@babel/core" "7.0.0-beta.47"
-    "@vue/babel-preset-app" "^3.0.0-beta.11"
+    "@vue/babel-preset-app" "^3.0.0-beta.15"
     babel-loader "^8.0.0-0"
 
-"@vue/cli-plugin-unit-jest@^3.0.0-beta.10":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-3.0.0-beta.11.tgz#fc9d705ce13e69b67c463de11e93ea60178e600d"
+"@vue/cli-plugin-unit-jest@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-3.0.0-beta.15.tgz#acf342cfe119ea3d737a112fb3e8208c73e1e950"
   dependencies:
-    execa "^0.10.0"
+    "@vue/cli-shared-utils" "^3.0.0-beta.15"
     jest "^22.4.3"
     jest-serializer-vue "^1.0.0"
     jest-transform-stub "^1.0.0"
     vue-jest "^2.6.0"
 
-"@vue/cli-service@^3.0.0-beta.10":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-3.0.0-beta.11.tgz#f5ee738e9bc3f30d765a83b838f1c70209a3d0d0"
+"@vue/cli-service@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-3.0.0-beta.15.tgz#5779ab045414ac7b0ba6b88725bc65a483a7975d"
   dependencies:
-    "@vue/cli-overlay" "^3.0.0-beta.11"
-    "@vue/cli-shared-utils" "^3.0.0-beta.11"
+    "@vue/cli-overlay" "^3.0.0-beta.15"
+    "@vue/cli-shared-utils" "^3.0.0-beta.15"
+    "@vue/preload-webpack-plugin" "^1.0.0"
     "@vue/web-component-wrapper" "^1.2.0"
+    acorn "^5.5.3"
     address "^1.0.3"
     autoprefixer "^8.4.1"
     cache-loader "^1.2.2"
     case-sensitive-paths-webpack-plugin "^2.1.2"
     chalk "^2.4.1"
+    clipboardy "^1.2.3"
     cliui "^4.1.0"
     copy-webpack-plugin "^4.5.1"
     css-loader "^0.28.11"
+    debug "^3.1.0"
     escape-string-regexp "^1.0.5"
     file-loader "^1.1.11"
     friendly-errors-webpack-plugin "^1.7.0"
     fs-extra "^6.0.1"
     get-value "^3.0.1"
     globby "^8.0.1"
+    hash-sum "^1.0.2"
     html-webpack-plugin "^3.2.0"
     launch-editor-middleware "^2.2.1"
     lodash.defaultsdeep "^4.6.0"
+    lodash.mapvalues "^4.6.0"
+    lodash.transform "^4.6.0"
     mini-css-extract-plugin "^0.4.0"
     minimist "^1.2.0"
     optimize-css-assets-webpack-plugin "^4.0.1"
     ora "^2.1.0"
     portfinder "^1.0.13"
     postcss-loader "^2.1.5"
-    preload-webpack-plugin "^3.0.0-alpha.1"
     read-pkg "^3.0.0"
     semver "^5.5.0"
     slash "^2.0.0"
@@ -772,7 +784,7 @@
     thread-loader "^1.1.5"
     uglifyjs-webpack-plugin "^1.2.5"
     url-loader "^1.0.1"
-    vue-loader "^15.1.0"
+    vue-loader "^15.2.0"
     vue-template-compiler "^2.5.16"
     webpack "^4.8.2"
     webpack-chain "^4.8.0"
@@ -780,16 +792,19 @@
     webpack-merge "^4.1.2"
     yorkie "^1.0.3"
 
-"@vue/cli-shared-utils@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-3.0.0-beta.11.tgz#a3df48c74fad69f6ade3f43f1b177583808036ae"
+"@vue/cli-shared-utils@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-3.0.0-beta.15.tgz#13916eb464b140a018b52479f559d09723db667c"
   dependencies:
     chalk "^2.3.0"
     cmd-shim "^2.0.2"
-    execa "^0.9.0"
+    execa "^0.10.0"
     joi "^12.0.0"
+    node-ipc "^9.1.1"
     opn "^5.2.0"
     ora "^1.3.0"
+    request "^2.83.0"
+    request-promise-native "^1.0.5"
     string.prototype.padstart "^3.0.0"
 
 "@vue/component-compiler-utils@^1.2.1":
@@ -805,6 +820,10 @@
     prettier "^1.13.0"
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
+
+"@vue/preload-webpack-plugin@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vue/preload-webpack-plugin/-/preload-webpack-plugin-1.0.0.tgz#08f156532909824da2aad258e151742d1e8f822e"
 
 "@vue/test-utils@^1.0.0-beta.16":
   version "1.0.0-beta.16"
@@ -962,6 +981,10 @@ acorn-globals@^4.1.0:
 acorn@^5.0.0, acorn@^5.3.0:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+
+acorn@^5.5.3:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.6.1.tgz#c9e50c3e3717cf897f1b071ceadbb543bbc0a8d4"
 
 address@^1.0.3:
   version "1.0.3"
@@ -1931,7 +1954,7 @@ clipboard@^2.0.0:
     select "^1.1.2"
     tiny-emitter "^2.0.0"
 
-clipboardy@^1.2.2:
+clipboardy@^1.2.2, clipboardy@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/clipboardy/-/clipboardy-1.2.3.tgz#0526361bf78724c1f20be248d428e365433c07ef"
   dependencies:
@@ -2201,7 +2224,7 @@ copy-webpack-plugin@^4.5.1:
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.3, core-js@^2.5.6:
+core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.3:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
@@ -2722,6 +2745,10 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+easy-stack@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/easy-stack/-/easy-stack-1.0.0.tgz#12c91b3085a37f0baa336e9486eac4bf94e3e788"
+
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
@@ -2914,6 +2941,10 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
+event-pubsub@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/event-pubsub/-/event-pubsub-4.3.0.tgz#f68d816bc29f1ec02c539dc58c8dd40ce72cb36e"
+
 eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
@@ -2968,18 +2999,6 @@ execa@^0.7.0:
 execa@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
-  dependencies:
-    cross-spawn "^5.0.1"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
-execa@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.9.0.tgz#adb7ce62cf985071f60580deb4a88b9e34712d01"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
@@ -4614,6 +4633,16 @@ js-beautify@^1.6.12, js-beautify@^1.6.14:
     mkdirp "~0.5.0"
     nopt "~3.0.1"
 
+js-message@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/js-message/-/js-message-1.0.5.tgz#2300d24b1af08e89dd095bc1a4c9c9cfcb892d15"
+
+js-queue@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/js-queue/-/js-queue-2.0.0.tgz#362213cf860f468f0125fc6c96abc1742531f948"
+  dependencies:
+    easy-stack "^1.0.0"
+
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
@@ -4975,6 +5004,10 @@ lodash.defaultsdeep@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.0.tgz#bec1024f85b1bd96cbea405b23c14ad6443a6f81"
 
+lodash.mapvalues@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz#1bafa5005de9dd6f4f26668c30ca37230cc9689c"
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -4999,6 +5032,10 @@ lodash.templatesettings@^4.0.0:
 lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+
+lodash.transform@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.transform/-/lodash.transform-4.6.0.tgz#12306422f63324aed8483d3f38332b5f670547a0"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -5522,6 +5559,14 @@ node-forge@0.7.5:
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
+
+node-ipc@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/node-ipc/-/node-ipc-9.1.1.tgz#4e245ed6938e65100e595ebc5dc34b16e8dd5d69"
+  dependencies:
+    event-pubsub "4.3.0"
+    js-message "1.0.5"
+    js-queue "2.0.0"
 
 node-libs-browser@^2.0.0:
   version "2.1.0"
@@ -6328,12 +6373,6 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.20, postcss@^6.0.22:
     chalk "^2.4.1"
     source-map "^0.6.1"
     supports-color "^5.4.0"
-
-preload-webpack-plugin@^3.0.0-alpha.1:
-  version "3.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/preload-webpack-plugin/-/preload-webpack-plugin-3.0.0-alpha.3.tgz#ecf0488a9f29b58e8e0ff295c7f6f11eb6c98efe"
-  dependencies:
-    "@babel/runtime" "^7.0.0-beta.44"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -8001,7 +8040,17 @@ vue-jest@^2.6.0:
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-loader@^15.1.0, vue-loader@^15.2.1:
+vue-loader@^15.2.0:
+  version "15.2.4"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.2.4.tgz#a7b923123d3cf87230a8ff54a1c16d31a6c5dbb4"
+  dependencies:
+    "@vue/component-compiler-utils" "^1.2.1"
+    hash-sum "^1.0.2"
+    loader-utils "^1.1.0"
+    vue-hot-reload-api "^2.3.0"
+    vue-style-loader "^4.1.0"
+
+vue-loader@^15.2.1:
   version "15.2.2"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.2.2.tgz#d845fef2eca64e91042e66315119536e17f1538d"
   dependencies:

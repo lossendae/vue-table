@@ -1,12 +1,14 @@
 <template>
     <div class="d-flex bg-light p-2 align-items-center">
-        <div class="">
-            <template v-if="totalItems > 0">
-                From {{ from }} to {{ to }} on {{ totalItems }} result(s)
-            </template>
-            <template v-else>
-                No results
-            </template>
+        <div>
+            <slot name="info" :from="from" :to="to" :totalItems="totalItems">
+                <template v-if="totalItems > 0">
+                    From {{ from }} to {{ to }} on {{ totalItems }} result(s)
+                </template>
+                <template v-else>
+                    No results
+                </template>
+            </slot>
         </div>
 
         <div class="ml-auto d-flex">
@@ -38,9 +40,9 @@
 </template>
 
 <script>
-    import VueTablePaginationMixin from './mixins/VueTablePaginationMixin'
+    import vueTablePaginationMixin from './mixins/vueTablePaginationMixin'
 
     export default {
-        mixins: [VueTablePaginationMixin],
+        mixins: [vueTablePaginationMixin],
     }
 </script>

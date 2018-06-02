@@ -1,7 +1,7 @@
 import VueTable from './VueTable'
-import VueTableMixin from './mixins/VueTableMixin'
+import vueTableMixin from './mixins/vueTableMixin'
 import VueTablePagination from './VueTablePagination'
-import VueTablePaginationMixin from './mixins/VueTablePaginationMixin'
+import vueTablePaginationMixin from './mixins/vueTablePaginationMixin'
 
 export default {
     install(Vue) {
@@ -10,4 +10,4 @@ export default {
     }
 }
 
-export { VueTable, VueTableMixin, VueTablePagination, VueTablePaginationMixin }
+export { VueTable, vueTableMixin, VueTablePagination, vueTablePaginationMixin }
