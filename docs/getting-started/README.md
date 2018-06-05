@@ -18,12 +18,14 @@ npm install --save @lossendae/vue-table
 import Vue from 'vue'
 import VueTable from '@lossendae/vue-table'
 
-Vue.use(VueTable)
+// install globally...
+Vue.use('vue-table', Vuetable)
 
-new Vue({
+// Or in your Vue component
+export default {
+    components: { Vuetable },
     ...
-}).$mount('#app')
-
+}
 ```
 
 Then use it in your component like the following:
