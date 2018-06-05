@@ -16,7 +16,15 @@ Then in your component
 import Vue from 'vue'
 import VueTable from '@lossendae/vue-table'
 
-Vue.use(VueTable)
+// install globally...
+Vue.use('vue-table', Vuetable)
+
+// Or in your Vue component
+
+export default {
+    components: { Vuetable },
+    ...
+} 
 ```
 
 ## License

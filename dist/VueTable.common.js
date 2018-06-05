@@ -593,12 +593,7 @@ var VueTablePagination_component = normalizeComponent(
 
 
 
-/* harmony default export */ var main = ({
-  install: function install(Vue) {
-    Vue.component('vue-table', VueTable);
-    Vue.component('vue-table-pagination', VueTablePagination);
-  }
-});
+/* harmony default export */ var main = (VueTable);
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VueTable", function() { return VueTable; });
@@ -1578,5 +1573,5 @@ module.exports = function (object, names) {
 
 /***/ })
 
-/******/ })["default"];
+/******/ });
 //# sourceMappingURL=VueTable.common.js.map
