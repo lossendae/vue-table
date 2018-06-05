@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VueTable</title>
+    <meta name="description" content="Simple table component for Vue.js 2.x with pagination and sortable columns">
+    <link rel="icon" href="/vue-table/logo.png">
+  <link rel="manifest" href="/vue-table/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/vue-table/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/vue-table/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/vue-table/assets/css/6.styles.5f4f54ef.css" as="style"><link rel="preload" href="/vue-table/assets/js/app.21e711a4.js" as="script"><link rel="preload" href="/vue-table/assets/js/5.107c48b5.js" as="script"><link rel="prefetch" href="/vue-table/assets/js/0.91bcca54.js"><link rel="prefetch" href="/vue-table/assets/js/1.5e1a384d.js"><link rel="prefetch" href="/vue-table/assets/js/2.034fc924.js"><link rel="prefetch" href="/vue-table/assets/js/3.80911a16.js"><link rel="prefetch" href="/vue-table/assets/js/4.f71a4738.js">
+    <link rel="stylesheet" href="/vue-table/assets/css/6.styles.5f4f54ef.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/vue-table/" class="home-link router-link-exact-active router-link-active"><!----><span class="site-name">
+      VueTable
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-table/getting-started/" class="nav-link">Getting started</a></div><div class="nav-item"><a href="/vue-table/examples/" class="nav-link">Examples</a></div><div class="nav-item"><a href="/vue-table/api-references/" class="nav-link">API references</a></div><a href="https://github.com/lossendae/vue-table" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-table/getting-started/" class="nav-link">Getting started</a></div><div class="nav-item"><a href="/vue-table/examples/" class="nav-link">Examples</a></div><div class="nav-item"><a href="/vue-table/api-references/" class="nav-link">API references</a></div><a href="https://github.com/lossendae/vue-table" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><!----></div><div class="home"><div class="hero"><!----><h1>VueTable</h1><p class="description">
+      Simple table component for Vue.js 2.x with pagination and sortable columns
+    </p><p class="action"><a href="/vue-table/getting-started/" class="nav-link action-button">Get Started →</a></p></div><div class="features"><div class="feature"><h2>Simple</h2><p>Only the basic rendering are handled by the components. You're responsible to feed data to the component via props.</p></div><div class="feature"><h2>Extensible</h2><p>All the rendering logic are in separated mixins. Therefore if you don't want to use the default markup you can easily create your own table &amp; pagination components.</p></div><div class="feature"><h2>Simple API</h2><p>Interaction from the parent to the table is simple and uses VueJS scoped slots to allow more customization options without to much compromise.</p></div></div><div class="content custom"></div><div class="footer">
+    MIT Licensed | Copyright © 2018-present Stéphane Boulard
+  </div></div></div></div>
+    <script src="/vue-table/assets/js/5.107c48b5.js" defer></script><script src="/vue-table/assets/js/app.21e711a4.js" defer></script>
+  </body>
+</html>
