@@ -27,10 +27,10 @@ describe('VueTablePagination.vue', () => {
 
       expect(wrapper.vm.is_last_page).toEqual(false)
 
-      wrapper.vm.currentPage = 2
+      wrapper.setProps({ currentPage: 2 })
       expect(wrapper.vm.is_last_page).toEqual(false)
 
-      wrapper.vm.currentPage = 4
+      wrapper.setProps({ currentPage: 4 })
       expect(wrapper.vm.is_last_page).toEqual(true)
     })
     it('"is_first_page" gives the correct information', () => {
@@ -44,10 +44,10 @@ describe('VueTablePagination.vue', () => {
 
       expect(wrapper.vm.is_first_page).toEqual(true)
 
-      wrapper.vm.currentPage = 2
+      wrapper.setProps({ currentPage: 2 })
       expect(wrapper.vm.is_first_page).toEqual(false)
 
-      wrapper.vm.currentPage = 4
+      wrapper.setProps({ currentPage: 4 })
       expect(wrapper.vm.is_first_page).toEqual(false)
     })
     it('"from" gives the correct information', () => {
@@ -61,10 +61,10 @@ describe('VueTablePagination.vue', () => {
 
       expect(wrapper.vm.from).toEqual(1)
 
-      wrapper.vm.currentPage = 2
+      wrapper.setProps({ currentPage: 2 })
       expect(wrapper.vm.from).toEqual(16)
 
-      wrapper.vm.currentPage = 4
+      wrapper.setProps({ currentPage: 4 })
       expect(wrapper.vm.from).toEqual(46)
     })
     it('"to" gives the correct information', () => {
@@ -78,10 +78,10 @@ describe('VueTablePagination.vue', () => {
 
       expect(wrapper.vm.to).toEqual(15)
 
-      wrapper.vm.currentPage = 2
+      wrapper.setProps({ currentPage: 2 })
       expect(wrapper.vm.to).toEqual(30)
 
-      wrapper.vm.currentPage = 4
+      wrapper.setProps({ currentPage: 4 })
       expect(wrapper.vm.to).toEqual(50)
     })
     it('"pages" gives the correct array of pages', () => {
