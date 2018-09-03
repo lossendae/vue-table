@@ -1,0 +1,34 @@
+header#hero {
+  //background: #649173;  /* fallback for old browsers */
+  //background: -webkit-linear-gradient(to top, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+  //background: linear-gradient(to top, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: #EFEFBB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #D4D3DD, #EFEFBB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  min-height: 100vh;
+  text-align: center;
+
+  img {
+    max-width: 200px;
+  }
+
+  h1 {
+    font-family: "Dosis", serif;
+    font-weight: 700;
+    font-size: 36px;
+  }
+
+  h2 {
+    font-family: "Dosis", serif;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .btn {
+    font-weight: bold;
+    min-width: 250px;
+  }
+}

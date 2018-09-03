@@ -18,8 +18,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueTable src/main.js",
     "test": "vue-cli-service test:unit",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:serve": "vue-cli-service serve docs/main.js",
+    "docs:build": "vue-cli-service build --dest docs/dist docs/main.js"
   },
   "keywords": [
     "vue.js",
@@ -31,17 +31,27 @@
     "json"
   ],
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
-    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.15",
-    "@vue/cli-service": "^3.0.0-beta.15",
-    "@vue/test-utils": "^1.0.0-beta.16",
+    "@vue/cli-plugin-babel": "^3.0.0-rc.10",
+    "@vue/cli-plugin-unit-jest": "^3.0.0-rc.10",
+    "@vue/cli-service": "^3.0.0-rc.10",
+    "@vue/test-utils": "^1.0.0-beta.23",
+    "accounting": "^0.4.1",
     "babel-core": "^7.0.0-0",
-    "babel-jest": "^22.0.4",
-    "jest-mock-console": "^0.3.5",
-    "lodash": "^4.17.10",
-    "vue": "^2.5.16",
-    "vue-template-compiler": "^2.5.13",
-    "vuepress": "^0.10.0"
+    "babel-jest": "^23.4.2",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "font-awesome": "^4.7.0",
+    "jest-mock-console": "^0.4.0",
+    "material-design-icons": "^3.0.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.1.0",
+    "v-tooltip": "^2.0.0-rc.33",
+    "vue": "^2.5.17",
+    "vue-multiselect": "^2.1.0",
+    "vue-prism-component": "^1.0.1",
+    "vue-template-compiler": "^2.5.17",
+    "vuebar": "^0.0.18",
+    "vuex": "^3.0.1"
   },
   "babel": {
     "presets": [
@@ -73,6 +83,17 @@
     ],
     "testMatch": [
       "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/src/main.js",
+      "!**/node_modules/**",
+      "!**/docs/**",
+      "!**/dist/**",
+      "!**/coverage/**",
+      "!vue.config.js",
+      "!**/tests/**"
     ]
   }
 }

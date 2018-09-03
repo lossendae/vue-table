@@ -1,0 +1,24 @@
+.page-wrapper {
+  max-width: 1244px;
+}
+
+.col-nav {
+  max-width: 280px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Dosis, sans-serif;
+  color: $primary;
+}
+
+h3 {
+  margin: ($spacer * 4) 0 ($spacer * 2);
+}
+
+h5 {
+  margin: ($spacer * 2) 0 $spacer;
+}
+
+section {
+  margin-bottom: $spacer * 4;
+}

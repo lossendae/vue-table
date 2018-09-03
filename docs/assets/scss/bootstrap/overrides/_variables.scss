@@ -1,0 +1,133 @@
+$desktop-min-width: 991px;
+$sidebar-width: 230px;
+
+//
+// Color system
+//
+
+$base-color: hsl(220, 60%, 50%);
+
+// stylelint-disable
+$white: #FFFFFF;
+$gray-100: hsl(223.6, 10.5%, 96%);
+$gray-200: hsl(223.6, 8%, 92%);
+$gray-300: hsl(223.6, 8%, 83%);
+$gray-400: hsl(223.6, 8%, 78%);
+$gray-500: hsl(223.6, 8%, 66%);
+$gray-600: hsl(223.6, 8%, 45%);
+$gray-700: hsl(223.6, 8%, 35%);
+$gray-800: hsl(223.6, 10.5%, 25%);
+$gray-900: hsl(223.6, 10.5%, 20.6%);
+$black: #000000;
+
+$blue: #35495E;
+$indigo: #6610F2;
+$purple: #6F42C1;
+$pink: #E83E8C;
+$red: #F05050;
+$orange: #FD7E14;
+$yellow: #F4BA4A;
+$green: #41B883;
+$teal: #EFEFBB;
+$cyan: #F6F8FA;
+
+$primary: $blue;
+$secondary: $gray-200;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$theme-colors: ();
+$theme-colors: map-merge((
+        "primary": $primary,
+        "secondary": $secondary,
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+        "light": $light,
+        "dark": $dark,
+        "pink": $pink,
+        "muted": $gray-200
+), $theme-colors);
+
+$header-bg-base: hsl(223.6, 10.5%, 96%);
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$spacer: 1rem;
+$border-color: hsl(223.6, 10.5%, 88%);
+
+// Cards
+
+$card-spacer-x: 1rem;
+$card-spacer-header-x: .75rem;
+$card-border-color: hsl(223.6, 10.5%, 88%);
+$card-cap-bg: $header-bg-base;
+
+// Badges
+
+$badge-font-size: 85%;
+$badge-padding-y: .3rem;
+$badge-padding-x: .55rem;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$input-btn-padding-y: .55rem;
+$input-btn-padding-x: .8rem;
+$btn-font-weight: 300;
+$input-placeholder-color: $gray-400;
+
+// Input form
+
+$input-border-color: $gray-300;
+$custom-control-indicator-size: 1.1rem;
+$custom-control-indicator-bg-size: 50% 80%;
+
+// Dropdown
+
+$enable-shadows: true;
+//$dropdown-box-shadow: 0 .5rem 1rem rgba($black, .5);
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-base: $font-family-sans-serif;
+$font-weight-normal: 300;
+$font-size-base: 1rem;
+$text-muted: $gray-500;
+$body-color: hsl(210, 29%, 30%);
+
+$small-font-size: 85%;
+$link-color: hsl(210, 80%, 50%);
+$link-hover-decoration: none;
+
+// Blockquotes
+$blockquote-font-size: $font-size-base;
+
+// Tables
+$table-cell-padding: .5rem;
+$table-border-color: $border-color;
+$table-accent-bg: hsl(210, 29%, 98%);
+$table-hover-bg: #F8F0FC;
+$table-striped-order: even;
+
+$table-head-bg: hsl(210, 29%, 97%);
+$table-head-color: hsl(210, 29%, 35%);
+
+// Navs
+$nav-tabs-border-width: 0;
+
+// Dropdown
+$dropdown-item-padding-x: 15px;
+$dropdown-item-padding-y: 10px;
+
+// Import all the other bootstrap variables at the end
+@import "~bootstrap/scss/variables";

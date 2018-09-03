@@ -1,0 +1,69 @@
+// Included before the import, as we need this to be overridden by stripped, hover, etc...
+.table {
+  tbody {
+    tr {
+      background-color: #FFFFFF;
+    }
+  }
+}
+
+@import "~bootstrap/scss/tables";
+
+.table {
+  thead {
+    th,
+    td {
+      border: 0 none;
+      border-bottom-width: (2 * $table-border-width);
+      font-size: .75rem;
+      font-family: $font-family-base;
+      font-weight: 300;
+      padding: .65rem $table-cell-padding;
+    }
+  }
+
+  th, td {
+    vertical-align: top;
+
+    // make td fit to its content
+    &.constrain {
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    &.fit {
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    // Self explanatory
+    &.auto-expand {
+      width: 100%;
+    }
+  }
+}
+
+
+.table {
+  thead {
+    border: 1px solid $table-border-color;
+
+    th {
+      color: $table-head-color;
+      background-color: $table-head-bg;
+      border-collapse: collapse;
+    }
+  }
+}
+
+
+.table-filters-sidebar {
+  max-width: 250px;
+  width: 250px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.table-filters-collapsed .table-filters-sidebar {
+  width: 0;
+}

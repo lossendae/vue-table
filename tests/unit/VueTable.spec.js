@@ -31,7 +31,7 @@ describe('VueTable.vue', () => {
         propsData: props,
       })
 
-      expect(wrapper.vm.$data.column_names).toEqual(['column_1', 'column_2'])
+      expect(wrapper.vm.column_names).toEqual(['column_1', 'column_2'])
     })
 
     it('should set the currently sorted column correctly', () => {
@@ -196,7 +196,7 @@ describe('VueTable.vue', () => {
         propsData: props,
       })
 
-      expect(wrapper.vm.fieldExistsInRow(props.rows[0], 'column_1')).toEqual(true)
+      expect(wrapper.vm.getDataFromRowWithColumnName(props.rows[0], 'column_1')).toEqual('value')
     })
     it('should return false when the column name does not exists in the row', () => {
       const props = {
@@ -206,7 +206,7 @@ describe('VueTable.vue', () => {
           name: 'action',
         }],
         rows: [{
-          column_1: 'value',
+          column_1: 'another value',
         }],
       }
       const wrapper = shallowMount(VueTable, {
@@ -223,7 +223,7 @@ describe('VueTable.vue', () => {
         },
       }
 
-      expect(wrapper.vm.fieldExistsInRow(props.rows[0], 'action')).toEqual(false)
+      expect(wrapper.vm.getDataFromRowWithColumnName(props.rows[0], 'action')).toEqual('[slot: action]')
     })
   })
 })

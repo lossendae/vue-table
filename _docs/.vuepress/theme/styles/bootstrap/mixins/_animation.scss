@@ -1,0 +1,6 @@
+@mixin translateY($percent) {
+  -webkit-transform: translateY($percent);
+  -ms-transform: translateY($percent); // IE9 only
+  -o-transform: translateY($percent);
+  transform: translateY($percent);
+}

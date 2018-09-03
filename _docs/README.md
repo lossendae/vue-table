@@ -1,5 +1,6 @@
 ---
-home: true
+home: false
+heroImage: /logo.png
 actionText: Get Started →
 actionLink: /getting-started/
 features:

@@ -1,0 +1,75 @@
+@import "~bootstrap/scss/nav";
+
+.nav-tabs {
+  border-bottom: 0 none;
+  background-color: $gray-200;
+
+  .nav-link {
+    padding: $card-spacer-x;
+    line-height: 1;
+    color: $gray-700;
+    font-weight: 600;
+
+    @include hover-focus {
+      color: $link-color;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: .5;
+    }
+  }
+
+  &.nav-tabs-alt {
+    border-bottom: 1px solid $border-color;
+    background-color: #FFFFFF;
+
+    .nav-link {
+      border-bottom: 3px solid transparent;
+
+      @include hover-focus {
+        border-bottom: 3px solid $link-color;
+      }
+
+      &.active {
+        border-bottom: 3px solid $link-color;
+      }
+    }
+  }
+}
+
+.nav-secondary.flex-column {
+  background-color: $gray-100;
+  width: 250px;
+
+  .nav-link {
+    border-radius: 0;
+    font-weight: 400;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
+    color: $gray-600;
+
+    &:hover {
+      background-color: $gray-200;
+    }
+
+    &::before {
+      content: "\f105";
+      display: inline-block;
+      font-family: "FontAwesome";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      @include translateY(-50%);
+    }
+
+    &.active {
+      color: $primary;
+      background-color: $gray-300;
+    }
+  }
+}

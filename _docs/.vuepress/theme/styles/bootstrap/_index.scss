@@ -1,0 +1,38 @@
+// imports prefixed by "~" fetches bootstrap files from node modules source directory
+// Rules followed :
+// For variable, the overrides are directly imported here BEFORE the core ones
+// For mixins, the overrides are directly imported here AFTER the core one
+// For elements, the overrides are directly imported here, the core one are imported as first line in the overrides file
+
+
+@import "~bootstrap/scss/functions";
+@import "overrides/variables";
+
+@import "~bootstrap/scss/mixins";
+@import "mixins/animation";
+@import "mixins/list";
+@import "mixins/button";
+
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "overrides/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "overrides/grid";
+@import "overrides/tables";
+@import "overrides/forms";
+@import "overrides/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "overrides/custom-forms";
+@import "overrides/nav";
+@import "~bootstrap/scss/navbar";
+@import "overrides/card";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";

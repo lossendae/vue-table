@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/buttons";
+
+.btn-icon {
+  background-color: $gray-300;
+  font-size: 1rem;
+}
+
+.btn-outline-secondary {
+  border-color: $gray-300;
+  color: $gray-700;
+}

@@ -1,6 +1,6 @@
 module.exports = {
     title: 'VueTable',
-    description: 'Simple table component for Vue.js 2.x with pagination and sortable columns',
+    description: 'Simple table component for <span class="text-success">Vue.js</span> 2.x with pagination and sortable columns',
     base: '/vue-table/',
     head: [
         ['link', { rel: 'icon', href: `/logo.png` }],
@@ -37,28 +37,28 @@ module.exports = {
                         link: '/api-references/',
                     },
                 ],
-                sidebar: {
-                    '/getting-started/': [
-                        {
-                            title: 'Getting started',
-                            collapsable: false,
-                            children: [
-                                '',
-                                'credits',
-                            ],
-                        },
-                    ],
-                    '/examples/': [
-                        {
-                            title: 'Examples',
-                            collapsable: false,
-                            children: [
-                                '',
-                                'case-study',
-                            ],
-                        },
-                    ],
-                },
+                // sidebar: {
+                //     '/getting-started/': [
+                //         {
+                //             title: 'Getting started',
+                //             collapsable: false,
+                //             children: [
+                //                 '',
+                //                 'credits',
+                //             ],
+                //         },
+                //     ],
+                //     '/examples/': [
+                //         {
+                //             title: 'Examples',
+                //             collapsable: false,
+                //             children: [
+                //                 '',
+                //                 'case-study',
+                //             ],
+                //         },
+                //     ],
+                // },
             },
         },
     },

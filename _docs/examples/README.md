@@ -13,6 +13,7 @@ pageClass: content-960
 > The default table assume that you're using bootstrap 4 with Fontawesome 4.7
 > There are other examples using other CSS framework and icon sets
 
+
 ```js 
 <template>
   <div id="app" class="p-3">

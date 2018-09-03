@@ -1,0 +1,49 @@
+aside {
+  nav {
+    position: sticky;
+    top: $spacer;
+
+    .nav-section-heading {
+      font-family: Dosis, sans-serif;
+      color: $green;
+      text-transform: uppercase;
+      margin: $spacer ($spacer / 2) ($spacer / 2);
+    }
+
+    .nav-section-item {
+      margin: 0 0 10px;
+      border-radius: 2px;
+
+      a {
+        padding: $spacer / 2;
+        color: $gray-600;
+      }
+
+      &.active > a {
+        background-color: $gray-100;
+      }
+
+      > ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0 3px 15px;
+      }
+    }
+
+    .nav-section-sub-item {
+
+      a {
+        padding: 0;
+        font-size: .85rem;
+      }
+
+      &.active a {
+        border-bottom: 2px dotted $green;
+      }
+    }
+
+    ul > li:first-child {
+      margin-top: 0;
+    }
+  }
+}

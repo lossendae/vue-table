@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/custom-forms";
+
+.custom-control-label {
+  line-height: 1.7rem;
+
+  &::after {
+    height: 1.05rem;
+  }
+}
+
+.form-group.row {
+  .custom-controls-stacked {
+    margin-top: .3rem;
+  }
+}

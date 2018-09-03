@@ -1,37 +1,36 @@
 <template>
-    <table class="table table-hover">
+    <table class="table">
         <thead>
             <tr>
-                <th v-for="(column, index) in columns" :key="`${column}_${index}`">
+                <th v-for="(column, index) in columns" :key="`column_${index}`" :class="getColumnClasses(column)">
                     <slot :name="`header__${column.name}`" :column="column">
-                        <a href="" class="d-flex align-items-center sortable-link"
+                        <a href="" :class="opts.css.sortLink"
                            @click.prevent="sort(column)"
                            v-if="(column.sortable || false) && rows.length > 0">
-                            {{ column.title || column.name }}
-                            <i class="fa ml-2"
-                               :class="{'fa-caret-up': sortDirection === 'asc', 'fa-caret-down': sortDirection === 'desc'}"
+                            {{ column.title || getColumnName(column) }}
+                            <i :class="[ sortDirection === 'desc' ? opts.css.sortIconDesc : opts.css.sortIconAsc ]"
                                v-if="isSorted(column)"></i>
                         </a>
-                        <template v-else>{{ column.title || column.name }}</template>
+                        <template v-else>{{ column.title || getColumnName(column) }}</template>
                     </slot>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="row in rows">
-                <td v-for="(name, index) in column_names" :key="`${row[name]}_${index}`">
-                    <template v-if="fieldExistsInRow(row, name)">
-                        <slot :name="name" :row="row">{{ row[name] }}</slot>
-                    </template>
-                    <template v-else>
-                        <slot :name="name" :row="row">[slot: {{ name }}]</slot>
-                    </template>
-                </td>
-            </tr>
+            <template v-for="(row, rowIndex) in rows">
+                <tr :key="getRowId(row, rowIndex)" :class="getRowClass(row)">
+                    <td v-for="(name, index) in column_names" :key="`${row[name]}_${getRowNumber(rowIndex)}_${index}`" :class="getColumnClasses({ name })">
+                        <slot :name="name" :row="row" :row_number="getRowNumber(rowIndex)">
+                            {{ getDataFromRowWithColumnName(row, name) }}
+                        </slot>
+                    </td>
+                </tr>
+                <slot name="row_expander" :row="row" :column_names="column_names"></slot>
+            </template>
             <tr v-if="rows.length === 0">
                 <slot name="no_result" :columns="columns">
-                    <td class="text-center pt-4 p-3" :colspan="columns.length">
-                        <slot name="empty">No results found</slot>
+                    <td :class="opts.css.noResult" :colspan="columns.length">
+                        <slot name="empty_row">{{ opts.text.noResult }}</slot>
                     </td>
                 </slot>
             </tr>
@@ -40,10 +39,10 @@
 </template>
 
 <script>
-    import vueTableMixin from './mixins/vueTableMixin'
+  import vueTableMixin from './mixins/vueTableMixin'
 
-    export default {
-        name: 'vue-table',
-        mixins: [vueTableMixin],
-    }
+  export default {
+    name: 'vue-table',
+    mixins: [vueTableMixin],
+  }
 </script>

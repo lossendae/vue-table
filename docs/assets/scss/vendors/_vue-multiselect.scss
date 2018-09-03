@@ -1,0 +1,441 @@
+fieldset[disabled] .multiselect {
+  pointer-events: none;
+}
+
+.multiselect__spinner {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 48px;
+  height: 35px;
+  background: #FFFFFF;
+  display: block;
+}
+
+.multiselect__spinner:before,
+.multiselect__spinner:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border-color: theme-color("primary") transparent transparent;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 0 1px transparent;
+}
+
+.multiselect__spinner:before {
+  animation: spinning 2.4s cubic-bezier(0.41, 0.26, 0.2, 0.62);
+  animation-iteration-count: infinite;
+}
+
+.multiselect__spinner:after {
+  animation: spinning 2.4s cubic-bezier(0.51, 0.09, 0.21, 0.8);
+  animation-iteration-count: infinite;
+}
+
+.multiselect__loading-enter-active,
+.multiselect__loading-leave-active {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+}
+
+.multiselect__loading-enter,
+.multiselect__loading-leave-active {
+  opacity: 0;
+}
+
+.multiselect,
+.multiselect__input,
+.multiselect__single {
+  font-family: inherit;
+  touch-action: manipulation;
+}
+
+.multiselect {
+  box-sizing: content-box;
+  position: relative;
+  display: block;
+  width: 100%;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+}
+
+.multiselect * {
+  box-sizing: border-box;
+}
+
+.multiselect:focus {
+  outline: none;
+}
+
+.multiselect--disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.multiselect--active {
+  z-index: 50;
+}
+
+.multiselect__input,
+.multiselect__single {
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  position: relative;
+  border: none;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  display: block;
+}
+
+.multiselect__input::placeholder {
+  color: $input-placeholder-color;
+  // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+  opacity: 1;
+}
+
+.multiselect__tag ~ .multiselect__input,
+.multiselect__tag ~ .multiselect__single {
+  width: auto;
+}
+
+.multiselect__input:hover,
+.multiselect__single:hover {}
+
+.multiselect__input:focus,
+.multiselect__single:focus {
+  outline: none;
+}
+
+.multiselect__single {
+  background-clip: padding-box;
+  background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
+  background-size: $custom-select-bg-size;
+}
+
+span > .multiselect__single {
+  color: $input-placeholder-color;
+  // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+  opacity: 1;
+}
+
+.multiselect__tags-wrap {
+  padding: $badge-padding-y 1.5rem $badge-padding-y $badge-padding-y ;
+  margin-bottom: -$badge-padding-y;
+}
+
+.multiselect__tags {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: 0;
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-clip: padding-box;
+  background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
+  background-size: $custom-select-bg-size;
+  border: $input-border-width solid $input-border-color;
+
+  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  @if $enable-rounded {
+    // Manually use the if/else instead of the mixin to account for iOS override
+    border-radius: $input-border-radius;
+  } @else {
+    // Otherwise undo the iOS default
+    border-radius: 0;
+  }
+
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+}
+
+.multiselect--active {
+  .multiselect__tags {
+    color: $input-focus-color;
+    background-color: $input-focus-bg;
+    border-color: $input-focus-border-color;
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-focus-box-shadow;
+    } @else {
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+}
+
+.multiselect__tag {
+  position: relative;
+  margin-right: $badge-padding-x;
+  color: $input-color;
+  background: #FFFFFF;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  border: 1px solid $gray-300;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  padding: ($input-padding-y - $badge-padding-y) $badge-padding-y ($input-padding-y - $badge-padding-y) ($badge-padding-y * 4);
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  @include border-radius($badge-border-radius);
+}
+
+.multiselect__tag-icon {
+  position: absolute;
+  left: $badge-padding-y;
+}
+
+.multiselect__tag-icon:after {
+  content: "\F00D";
+  color: theme-color("primary");
+  display: inline-block;
+  font-family: FontAwesome;
+  position: absolute;
+  font-style: normal;
+  font-size: $font-size-base;
+}
+
+.multiselect__tag:focus,
+.multiselect__tag:hover {
+  background: $table-head-bg;
+}
+
+.multiselect__tag-icon:focus:after,
+.multiselect__tag-icon:hover:after {
+  color: theme-color("danger");
+}
+
+.multiselect__current {
+  line-height: 16px;
+  min-height: 40px;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 8px 12px 0;
+  padding-right: 30px;
+  white-space: nowrap;
+  margin: 0;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #E8E8E8;
+  cursor: pointer;
+}
+
+.multiselect__placeholder {
+  display: inline-block;
+  color: $input-placeholder-color;
+  // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+  opacity: 1;
+}
+
+.multiselect--active .multiselect__placeholder {
+  display: none;
+}
+
+.multiselect__content-wrapper {
+  position: absolute;
+  display: block;
+  width: 100%;
+  max-height: 240px;
+  overflow: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 50;
+  -webkit-overflow-scrolling: touch;
+  // bootstrap
+  margin: $dropdown-spacer 0 0; // override default ul
+  font-size: $font-size-base; // Redeclare because nesting can cause inheritance issues
+  color: $body-color;
+  background-color: $dropdown-bg;
+  background-clip: padding-box;
+  border: $dropdown-border-width solid $dropdown-border-color;
+  @include border-radius($dropdown-border-radius);
+  @include box-shadow($dropdown-box-shadow);
+}
+
+.multiselect__content {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  vertical-align: top;
+}
+
+.multiselect--above .multiselect__content-wrapper {
+  bottom: 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+  border-top: 1px solid #E8E8E8;
+
+  &.multiseselect__active {
+    z-index: 11;
+  }
+}
+
+.multiselect__content::webkit-scrollbar {
+  display: none;
+}
+
+.multiselect__element {
+  display: block;
+}
+
+.multiselect__option {
+  display: block;
+  padding: 12px;
+  min-height: 40px;
+  line-height: 16px;
+  text-decoration: none;
+  text-transform: none;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.multiselect__option:after {
+  top: 0;
+  right: 0;
+  position: absolute;
+  line-height: 40px;
+  padding-right: 12px;
+  padding-left: 20px;
+  font-size: 13px;
+}
+
+.multiselect__option--highlight {
+  background: theme-color("primary");
+  outline: none;
+  color: white;
+}
+
+.multiselect__option--highlight:after {
+  content: attr(data-select);
+  background: theme-color("primary");
+  color: white;
+}
+
+.multiselect__option--selected {
+  background: #F3F3F3;
+  color: #35495E;
+  font-weight: bold;
+}
+
+.multiselect__option--selected:after {
+  content: attr(data-selected);
+  color: silver;
+}
+
+.multiselect__option--selected.multiselect__option--highlight {
+  background: theme-color("danger");
+  color: #FFFFFF;
+}
+
+.multiselect__option--selected.multiselect__option--highlight:after {
+  background: theme-color("danger");
+  content: attr(data-deselect);
+  color: #FFFFFF;
+}
+
+.multiselect--disabled {
+  background: #EDEDED;
+  pointer-events: none;
+}
+
+.multiselect--disabled .multiselect__current {
+  background: #EDEDED;
+  color: #A6A6A6;
+}
+
+.multiselect__option--disabled {
+  background: #EDEDED;
+  color: #A6A6A6;
+  cursor: text;
+  pointer-events: none;
+}
+
+.multiselect__option--group {
+  background: #EDEDED;
+  color: #35495E;
+}
+
+.multiselect__option--group.multiselect__option--highlight {
+  background: #35495E;
+  color: #FFFFFF;
+}
+
+.multiselect__option--group.multiselect__option--highlight:after {
+  background: #35495E;
+}
+
+.multiselect__option--disabled.multiselect__option--highlight {
+  background: #DEDEDE;
+}
+
+.multiselect__option--group-selected.multiselect__option--highlight {
+  background: theme-color("danger");
+  color: #FFFFFF;
+}
+
+.multiselect__option--group-selected.multiselect__option--highlight:after {
+  background: theme-color("danger");
+  content: attr(data-deselect);
+  color: #FFFFFF;
+}
+
+.multiselect-enter-active,
+.multiselect-leave-active {
+  transition: all 0.15s ease;
+}
+
+.multiselect-enter,
+.multiselect-leave-active {
+  opacity: 0;
+}
+
+.multiselect__strong {
+  margin-bottom: 8px;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@keyframes spinning {
+  from { transform: rotate(0) }
+  to { transform: rotate(2turn) }
+}
+
+.input-group > .multiselect:not(:first-child) .multiselect__tags {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > .multiselect:not(:last-child) .multiselect__tags {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .multiselect {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}

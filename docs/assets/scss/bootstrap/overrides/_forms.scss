@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/forms";
+
+label {
+  font-weight: 500;
+}
+
+.form-group.input-search {
+  position: relative;
+  &:before {
+    content: "\f002";
+    color: $gray-500;
+    display: inline-block;
+    font-family: FontAwesome;
+    position: absolute;
+    font-style: normal;
+    font-size: $font-size-base;
+    top: $input-padding-y;
+    right: $input-padding-x;
+  }
+}
